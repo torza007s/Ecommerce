@@ -1,16 +1,16 @@
 import React, { useContext } from 'react'
-import  ProductProvider  from '../contexts/ProductContext'
+import   { ProductContext }  from '../contexts/ProductContext'
 
 function Home() {
-    const { products } = useContext(ProductProvider)
-    console.log(products)
+    const { products } = useContext(ProductContext)
+    //console.log(products)
 
     const filterdProducts = products.filter((item) => {
         return (
             item.category === "men's clothing"
         );
     });
-    //console.log(filterdProducts)
+    console.log(filterdProducts)
     return (
         <div>Home</div>
     )
