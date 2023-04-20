@@ -22,7 +22,6 @@ function Home() {
                         {filterdProducts.map((product) => {
                             return <Product  product={product} key={product.id}/>
 
-
                         })}
                     </div>
                 </div>

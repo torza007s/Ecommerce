@@ -16,18 +16,21 @@ const Product = ({ product }) => {
                         <img className='max-h-[160px] group-hover:scale-110 duration-300' src={image} alt='' />
                     </div>
                 </div>
-                <div className='absolute top-0 right-0 bg-red-500 p-2'>
+                <div className='absolute top-3 right-0 group-hover:right-3 bg-red-500 p-2 opacity-0 group-hover:opacity-100 transition-all duration-300'>
                     <button>
-                        <div className='flex justify-center items-center text-white w-12 h-5'>
+                        <div className='flex justify-center items-center  text-white w-6 h-6'>
                             <BsFillCartPlusFill className='text-3xl'/>
                         </div>
                     </button>
-                    <Link to={'/'} className='w-12 h-12 bg-white flex justify-center items-center text-primary drop-shadow-xl'>
-                        <AiFillEye />
+                    <hr/>
+                    <div className='flex justify-center mt-2'>
+                    <Link to={'/'} className='flex justify-center items-center   bg-white drop-shadow-xl w-6 h-6'>
+                        <AiFillEye className=''/>
                     </Link>
+                    </div>
                 </div>
             </div>
-            <div className=''>2</div>
+           
         </>
 
     )
