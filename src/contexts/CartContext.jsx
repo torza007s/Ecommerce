@@ -33,8 +33,9 @@ const CartProvider = ({ children }) => {
     setCart([]);
   };
 
-  const increaseAmount = () => {
-    console.log("show");
+  const increaseAmount = (id) => {
+    const increase = cart.find((item) => item.id===id )
+    addTocart(increase,id)
   };
 
 
