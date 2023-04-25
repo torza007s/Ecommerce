@@ -4,9 +4,14 @@ import { createContext, useState, useEffect } from "react";
 export const Cartcontext = createContext();
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [itemSmount, setItmeAmount] = useState(0)
+
+
 
   const addTocart = (product, id) => {
     const newItem = { ...product, amount: 1 };
+
+
     const cartItem = cart.find((item) => {
       return item.id === id;
     });
@@ -54,10 +59,12 @@ const CartProvider = ({ children }) => {
       });
       setCart(newCarts);
     }
-    if (cartItems.amount < 1) {
+    if (cartItems.amount < 2) {
+
       removeFromCart(id);
+      //console.log(cartItems.amount)
     }
-    
+
   };
 
 
@@ -66,7 +73,7 @@ const CartProvider = ({ children }) => {
   // console.log(cart)
   return (
     <Cartcontext.Provider
-      value={{ cart, addTocart, removeFromCart, clearCart, increaseAmount, decreaseAmount }}
+      value={{ cart, addTocart, removeFromCart, clearCart, increaseAmount, decreaseAmount,itemSmount }}
     >
       {children}
     </Cartcontext.Provider>

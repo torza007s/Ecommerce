@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMdClose, IoMdRemove, IoMdAdd } from "react-icons/io";
 import { useContext } from "react";
@@ -8,6 +8,8 @@ function CartItem({ item }) {
   const { id, title, image, price, amount } = item;
 
   const { removeFromCart, increaseAmount, decreaseAmount } = useContext(Cartcontext);
+
+  
 
   return (
     <div className="flex gap-x-4 py-2 lg:px-6 border-b border-gray-200 w-full font-light text-gray-500">
